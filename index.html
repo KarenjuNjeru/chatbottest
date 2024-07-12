@@ -96,6 +96,19 @@
     </div>
 
     <script>
+        const botResponses = [
+            "I'm here to assist you with anything you need.",
+            "Can you please provide more details?",
+            "Sure, I can help with that.",
+            "What would you like to know more about?",
+            "Let's see how I can assist you.",
+            "I'm on it! Just a moment.",
+            "Could you clarify your question?",
+            "I'm happy to help! What do you need?",
+            "That sounds interesting! Tell me more.",
+            "Absolutely! How can I assist you further?"
+        ];
+
         function sendMessage() {
             const userInput = document.getElementById('user-input');
             const chatBox = document.getElementById('chat-box');
@@ -117,7 +130,8 @@
                 setTimeout(() => {
                     const botMessageDiv = document.createElement('div');
                     botMessageDiv.classList.add('bot-message');
-                    botMessageDiv.textContent = 'This is a bot response.';
+                    const randomIndex = Math.floor(Math.random() * botResponses.length);
+                    botMessageDiv.textContent = botResponses[randomIndex];
                     chatBox.appendChild(botMessageDiv);
 
                     // Scroll to the bottom
